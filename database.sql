@@ -91,3 +91,39 @@ VALUES
 ('GeonWorks FrogTKL', 'TKL', 'Top mount case with 6 degree typing angle, brass weight', '295', 'frogtkl.jpeg'),
 ('KBDFans Odin', '100', 'Leaf spring mount, 7 degree typing angle, PVD aluminum weight, translucent badge', '295', 'odin100.jpeg'),
 ('CannonKeys Rekt1800', '100', '1800 layout burger mounted keyboard, 7.5 degree typing angle, black FR4 plate', '330', 'rekt1800.jpeg');
+
+INSERT INTO "keycaps" ("name", "type", "specifications", "price", "image")
+VALUES
+('GMK DualShot', 'Cherry', 'A PlayStation 1 themed keycap set that will bring the nostolgia right to your desk. Double-shot ABS plastic.', '140', 'dualshot.jpeg'),
+('GMK Striker', 'Cherry', 'A keycap set tributed to the Japanese National Football Team. Double-shot ABS plastic.', '140', 'gmkstriker.jpeg'),
+('GMK Tuzi', 'Cherry', 'A super cute keycap set with bunny-themed novelties. Tuzi Chinese means rabbit. Double-shot ABS plastic.', '140', 'gmktuzi.jpeg'),
+('GMK Botanical', 'Cherry', 'Themed after a garden, this set is sure to set the vibe of any earthy setting. Double-shot ABS plastic.','140', 'botanical.jpeg'),
+('Drop + Marvel Captain America', 'MT3', 'The First Avenger surely deserves his own keycap set. This set is styled in true blue, dark red, with silver and white legends.', '130', 'dropcaptainamerica.jpeg'),
+('Drop + The Lord of The Rings', 'MT3', 'For the true die hards of the franchise, this set encaptures the Elven race with a subdued-green-and-off-white colorway.', '130', 'droplotr.jpeg'),
+('MiTo Laser', 'SA', 'A cyberpunk-themed keycap set tthat captures the neon lights, dark shadows, an intruguing antiheroes of the genre.', '150', 'mitolaser.jpeg'),
+('MiTo Godspeed', 'SA', 'Inspired by the iconic colorway on the original Apollo 11 Lunar Module Cockpit.', '150', 'mitogodspeed.jpeg'),
+('XDA Dots', 'XDA', 'A unique set of keycaps with dots replacing the legends.', '30', 'xdadots.jpeg'),
+('Everglide ARC 9009', 'XDA', 'A keycap set with neutral and pastel tones, this set is sure to fit in with any theme you have.', '50', 'arc9009.jpeg');
+
+INSERT INTO "stabilizers" ("name", "type", "specifications", "price", "image")
+VALUES 
+('Durock V2', 'screw-in', 'A smokey grey translucent exterior with a mold that prevents wire drop out.', '20', 'durockv2.jpeg'),
+('C3 Equalz Stabilizers', 'screw-in', 'A clear stabilizer deemd one fo the best stabs on the market.', '20', 'c3stabs.jpeg'),
+('Gateron Ink V2', 'screw-in', 'Constructed with the same material as their popular Ink Black switches.', '15', 'gatinkv2.jpeg'),
+('Tecsee V3', 'screw-in', 'Multi-compatible stabs for both their medium swithes as well as their standard travel switches.', '15', 'tecseev3.jpeg'),
+('Owlab Owlstab', 'screw-in', 'Stabilizers with memory alloy allowing the wire to reshape itself after slight bending.', '20', 'owlstab.jpeg'),
+('Cherry Stabilizers', 'screw-in', 'A stable stabilizer for any enthusiast.', '15', 'cherrystab.jpeg'),
+('GMK Stabilizers', 'screw-in', 'Industry standard? Well, their keycaps certainly are.', '20', 'gmkstabs.jpeg');
+
+INSERT INTO "switches" ("name", "type", "specifications", "price", "image")
+VALUES 
+('Cherry Red', 'linear', 'Arguably the most popular switch, Cherry Reds provide a smooth linear actuation. Price listed is for 35 switches.', '22', 'cherryred.jpeg'),
+('Gateron Black Ink', 'linear', 'An extremely smooth linear switch with a smokey gray house. Price listed is for 50 switches.', '37', 'gatblackink.jpeg'),
+('Alpaca Linears', 'linear', 'A very smooth and quiet switch that could make for an ideal office workspace. Price listed is for 50 switches.', '27', 'alpacalinear.jpeg'),
+('Tecsee Eclair', 'linear', 'A smooth linear switch with nylon housing. Price listed is for 50 switches.', '25', 'tecseeeclair.jpeg'),
+('NovelKey Creams', 'linear', 'A unique switch that features a POM plastic housing that starts off scratchy, but over time will become extremely smooth. Price listed is for 36 switches.' '25', 'nkcreams.jpeg'),
+('Drop + Invyr Holy Panda', 'tactile', 'The name speaks for itself, this switch provides a very tacdtile yet smooth bump and feel. Price listed is for 35 switches.', '42', 'holypanda.jpeg'),
+('Durock T1', 'tactile', 'A tactile switch with a polycarbonate top housing, nylon bottom, and POM stem. Price listed is for 20 switches.', '11', 'durockt1.jpeg'),
+('Zeal Zealio', 'Tactile', 'An extremely tactile switch with a smooth bump for an amazing typing experience. Price listed is for 10 switches.', '11', 'zealio.jpeg'),
+('Gazzew Boba U4T', 'Tactile', 'A tactile switch that is smoother than nylon plastic. Price listed is for 35 switches.', '23', 'bobau4t.jpeg'),
+('Kailh Box Jade', 'Box', 'A box switch that provides a clicking sound when actuated. Simlar to tactile switches. Price listed is for 65 switches.', '35', 'boxjades.jpeg');
