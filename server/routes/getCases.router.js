@@ -5,10 +5,16 @@ const router = express.Router();
 /**
  * GET route template
  */
-router.get('/', (req, res) => {
+router.get('/cases', (req, res) => {
   // GET route code here
+  pool.query(`SELECT * FROM "cases";`)
+    .then((result) => {
+      res.status(200).send(result.rows);
+    }).catch((err) => {
+      console.log('Error in getCases', err);
+    });
 });
-
+ 
 /**
  * POST route template
  */
