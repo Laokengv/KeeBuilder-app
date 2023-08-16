@@ -27,7 +27,7 @@ function RegisterForm() {
           {errors.registrationMessage}
         </h3>
       )}
-      <div>
+      <div className="username_style">
         <label htmlFor="username">
           Username:
           <input
@@ -39,7 +39,7 @@ function RegisterForm() {
           />
         </label>
       </div>
-      <div>
+      <div className="password_style">
         <label htmlFor="password">
           Password:
           <input
@@ -52,7 +52,7 @@ function RegisterForm() {
         </label>
       </div>
       <div>
-        <input className="btn" type="submit" name="submit" value="Register" />
+        <input  className="btn" type="submit" name="submit" value="Register" />
       </div>
     </form>
   );

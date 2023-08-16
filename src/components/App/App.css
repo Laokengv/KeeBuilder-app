@@ -7,11 +7,20 @@ body,
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  background-color: #333a45;
 }
 
 img {
   display: inline-block;
   max-width: 100%;
+}
+
+h2 {
+  color: #939eae;
+}
+
+h4 {
+  color: #939eae;
 }
 
 /* --------------------------------------------------------------------------------
@@ -26,38 +35,38 @@ Container
 Button
 -------------------------------------------------------------------------------- */
 
-/* .btn {
+.btn {
   display: inline-block;
   padding: 10px 20px;
   border-color: #014041;
   border-width: 1px 1px 3px;
   border-radius: 4px;
-  background-color: #00acb0;
+  background-color: #f44c7f;
   color: #f8f8f8;
   font-size: 1.1rem;
   outline: 0;
   cursor: pointer;
 } */
 
-/* .btn_sizeMin {
+.btn_sizeMin {
   min-height: 50px;
   min-width: 100px;
-} */
+}
 
-/* .btn_sizeSm {
+.btn_sizeSm {
   padding: 10px 15px;
   font-size: 0.8rem;
-} */
+}
 
-/* .btn_sizeFull {
+.btn_sizeFull {
   display: block;
   width: 100%;
-} */
+}
 
-/* .btn:hover {
-  background-color: #008183;
+.btn:hover {
+  background-color: #9d2e4f;
   text-decoration: none;
-} */
+}
 
 /* This line makes the "Register" and "Login" buttons look like links */
 .btn_asLink {
@@ -67,13 +76,13 @@ Button
   border-radius: 0;
   background: none;
   font: inherit;
-  color: #444;
+  color: #939eae;
 }
 
 .btn_asLink:hover {
   background-color: transparent;
-  border-color: #008183;
-  color: #008183;
+  border-color: #9d2e4f;
+  color: #9d2e4f;
 }
 
 /* --------------------------------------------------------------------------------
@@ -101,9 +110,17 @@ Form Treatment
   max-width: 100%;
   padding: 25px;
   margin: 0 auto 20px;
-  background-color: #efefef;
+  background-color: #333a45;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);
+}
+
+.username_style {
+  color: #939eae;
+}
+
+.password_style {
+  color: #939eae
 }
 
 input {
