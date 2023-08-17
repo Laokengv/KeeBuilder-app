@@ -2,12 +2,12 @@ import React from 'react';
 
 
 
-function Keycaps() {
+function Switches() {
 
 
     return (
-
+a
     );
 }
 
-export default Keycaps;
+export default Switches;

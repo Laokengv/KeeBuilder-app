@@ -11,6 +11,17 @@ CREATE TABLE "user" (
 
 -- PRODUCTS TABLES -- 
 
+CREATE TABLE "keyboard" (
+"id" SERIAL PRIMARY KEY,
+"user_id" INT REFERENCES "user",
+"cases_id" INT REFERENCES "cases",
+"keycaps_id" INT REFERENCES "keycaps",
+"stabilizers_id" INT REFERENCES "stabilizers",
+"switches_id" INT REFERENCES "switches",
+"name_of_keyboard" VARCHAR(1000)
+);
+
+
 CREATE TABLE "cases" (
     "id" SERIAL PRIMARY KEY,
     "name" VARCHAR(120) NOT NULL,

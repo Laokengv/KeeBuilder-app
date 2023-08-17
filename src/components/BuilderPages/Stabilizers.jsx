@@ -2,12 +2,12 @@ import React from 'react';
 
 
 
-function Switches() {
+function Stabilizers() {
 
 
     return (
-
+a
     );
 }
 
-export default Switches;
+export default Stabilizers;

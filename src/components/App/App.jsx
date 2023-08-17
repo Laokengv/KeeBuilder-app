@@ -20,6 +20,11 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import Cases from '../BuilderPages/Cases';
+import Switches from '../BuilderPages/Switches';
+import Stabilizers from '../BuilderPages/Stabilizers';
+import Keycaps from '../BuilderPages/Keycaps';
+// import BuilderPage from '../BuilderPages/BuilderPage';
 
 import './App.css';
 
@@ -36,6 +41,7 @@ function App() {
     <Router>
       <div>
         <Nav />
+        {/* <BuilderPage /> */}
         {/* <MenuNav /> */}
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
@@ -83,7 +89,18 @@ function App() {
               <LoginPage />
             }
           </Route>
-
+          <Route exact path="/cases">
+            <Cases />
+          </Route>
+          <Route exact path="/switches">
+            <Switches />
+          </Route>
+          <Route exact path="/stabilizers">
+            <Stabilizers />
+          </Route>
+          <Route exact path="/keycaps">
+            <Keycaps />
+          </Route>
           <Route
             exact
             path="/registration"
@@ -109,9 +126,10 @@ function App() {
               :
               // Otherwise, show the Landing page
               <LandingPage />
+              // <BuilderPage />
             }
           </Route>
-
+            
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
             <h1>404</h1>

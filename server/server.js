@@ -8,6 +8,7 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
+const keyboardRouter = require('./routes/keyboard.router');
 
 // Express middleware
 app.use(express.json());
@@ -21,7 +22,7 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
-
+app.use('/api/keyboard', keyboardRouter);
 // Serve static files
 app.use(express.static('build'));
 
