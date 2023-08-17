@@ -4,88 +4,88 @@
 -- ex. SELECT * FROM "user";
 -- Otherwise you will have errors!
 CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
+  "id" SERIAL PRIMARY KEY,
+  "username" VARCHAR (80) UNIQUE NOT NULL,
+  "password" VARCHAR (1000) NOT NULL
 );
 
 -- PRODUCTS TABLES -- 
 
 CREATE TABLE "keyboard" (
-"id" SERIAL PRIMARY KEY,
-"user_id" INT REFERENCES "user",
-"cases_id" INT REFERENCES "cases",
-"keycaps_id" INT REFERENCES "keycaps",
-"stabilizers_id" INT REFERENCES "stabilizers",
-"switches_id" INT REFERENCES "switches",
-"name_of_keyboard" VARCHAR(1000)
+  "id" SERIAL PRIMARY KEY,
+  "user_id" INT REFERENCES "user",
+  "cases_id" INT REFERENCES "cases",
+  "keycaps_id" INT REFERENCES "keycaps",
+  "stabilizers_id" INT REFERENCES "stabilizers",
+  "switches_id" INT REFERENCES "switches",
+  "name_of_keyboard" VARCHAR(1000)
 );
 
 
 CREATE TABLE "cases" (
-    "id" SERIAL PRIMARY KEY,
-    "name" VARCHAR(120) NOT NULL,
-    "size" TEXT NOT NULL,
-    "specifications" VARCHAR(240) NOT NULL,
-    "price" TEXT NOT NULL,
-    "image" VARCHAR(120) NOT NULL,
-    "user_id" INT REFERENCES "user"
+  "id" SERIAL PRIMARY KEY,
+  "name" VARCHAR(120) NOT NULL,
+  "size" TEXT NOT NULL,
+  "specifications" VARCHAR(240) NOT NULL,
+  "price" TEXT NOT NULL,
+  "image" VARCHAR(120) NOT NULL,
+  "user_id" INT REFERENCES "user"
 );
 
 CREATE TABLE "keycaps" (
-    "id" SERIAL PRIMARY KEY,
-    "name" VARCHAR(120) NOT NULL,
-    "profile" VARCHAR (20) NOT NULL,
-    "specifications" VARCHAR(240) NOT NULL,
-    "price" TEXT NOT NULL,
-    "image" VARCHAR(120) NOT NULL,
-    "user_id" INT REFERENCES "user"
+  "id" SERIAL PRIMARY KEY,
+  "name" VARCHAR(120) NOT NULL,
+  "profile" VARCHAR (20) NOT NULL,
+  "specifications" VARCHAR(240) NOT NULL,
+  "price" TEXT NOT NULL,
+  "image" VARCHAR(120) NOT NULL,
+  "user_id" INT REFERENCES "user"
 );
 
 CREATE TABLE "stabilizers" (
-    "id" SERIAL PRIMARY KEY,
-    "name" VARCHAR(120) NOT NULL,
-    "type" VARCHAR(120) NOT NULL,
-    "specifications" VARCHAR(240) NOT NULL,
-    "price" TEXT NOT NULL,
-    "image" VARCHAR(120) NOT NULL,
-    "user_id" INT REFERENCES "user"
+  "id" SERIAL PRIMARY KEY,
+  "name" VARCHAR(120) NOT NULL,
+  "type" VARCHAR(120) NOT NULL,
+  "specifications" VARCHAR(240) NOT NULL,
+  "price" TEXT NOT NULL,
+  "image" VARCHAR(120) NOT NULL,
+  "user_id" INT REFERENCES "user"
 );
 
 CREATE TABLE "switches" (
-    "id" SERIAL PRIMARY KEY,
-    "name" VARCHAR(120) NOT NULL,
-    "type" VARCHAR(120) NOT NULL,
-    "specifications" VARCHAR(240) NOT NULL,
-    "price" TEXT NOT NULL,
-    "image" VARCHAR(120) NOT NULL,
-    "user_id" INT REFERENCES "user"
+  "id" SERIAL PRIMARY KEY,
+  "name" VARCHAR(120) NOT NULL,
+  "type" VARCHAR(120) NOT NULL,
+  "specifications" VARCHAR(240) NOT NULL,
+  "price" TEXT NOT NULL,
+  "image" VARCHAR(120) NOT NULL,
+  "user_id" INT REFERENCES "user"
 );
 
 -- JUNCTION TABLES -- 
 
 CREATE TABLE "user_cases" (
-    "id" SERIAL PRIMARY KEY,
-    "user_id" INT REFERENCES "user" NOT NULL,
-    "cases_id" INT REFERENCES "cases" NOT NULL
+  "id" SERIAL PRIMARY KEY,
+  "user_id" INT REFERENCES "user" NOT NULL,
+  "cases_id" INT REFERENCES "cases" NOT NULL
 );
 
 CREATE TABLE "user_keycaps" (
-    "id" SERIAL PRIMARY KEY,
-    "user_id" INT REFERENCES "user" NOT NULL,
-    "keycaps_id" INT REFERENCES "keycaps" NOT NULL,
+  "id" SERIAL PRIMARY KEY,
+  "user_id" INT REFERENCES "user" NOT NULL,
+  "keycaps_id" INT REFERENCES "keycaps" NOT NULL,
 );
 
 CREATE TABLE "user_stabilizers" (
-    "id" SERIAL PRIMARY KEY,
-    "user_id" INT REFERENCES "user" NOT NULL,
-    "stabilizers_id" INT REFERENCES "stabilizers" NOT NULL
+  "id" SERIAL PRIMARY KEY,
+  "user_id" INT REFERENCES "user" NOT NULL,
+  "stabilizers_id" INT REFERENCES "stabilizers" NOT NULL
 );
 
 CREATE TABLE "user_switches" (
-    "id" SERIAL PRIMARY KEY,
-    "user_id" INT REFERENCES "user" NOT NULL,
-    "switches_id" INT REFERENCES "switches" NOT NULL
+  "id" SERIAL PRIMARY KEY,
+  "user_id" INT REFERENCES "user" NOT NULL,
+  "switches_id" INT REFERENCES "switches" NOT NULL
 );
 
 -- DATA --
