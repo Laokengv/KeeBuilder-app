@@ -20,10 +20,6 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import Cases from '../BuilderPages/Cases';
-import Switches from '../BuilderPages/Switches';
-import Stabilizers from '../BuilderPages/Stabilizers';
-import Keycaps from '../BuilderPages/Keycaps';
 // import BuilderPage from '../BuilderPages/BuilderPage';
 
 import './App.css';
@@ -89,7 +85,7 @@ function App() {
               <LoginPage />
             }
           </Route>
-          <Route exact path="/cases">
+            {/* <Route exact path="/cases">
             <Cases />
           </Route>
           <Route exact path="/switches">
@@ -100,7 +96,7 @@ function App() {
           </Route>
           <Route exact path="/keycaps">
             <Keycaps />
-          </Route>
+          </Route> */}
           <Route
             exact
             path="/registration"

@@ -28,14 +28,19 @@ router.get('/', (req, res) => {
   });
 
   router.post('/', (req, res) => {
-    pool.query(`INSERT INTO "keyboard" ("user_id", "cases_id", "keycaps_id", "stabilizers_id", "switches_id")`, [req.user.id, req.body.cases_id, req.body.keycaps_id, req.body.stabilizers_id, req.body.switches_id])
+    let keyboard = req.body;
+    console.log(req.user);
+    pool.query(`INSERT INTO "keyboard" ("user_id", "cases_id", "keycaps_id", "stabilizers_id", "switches_id", "name_of_keyboard")
+    VALUES ($1, $2, $3, $4, $5, $6);
+    `, 
+    [req.user.id, keyboard.cases_id, keyboard.keycaps_id, keyboard.stabilizers_id, keyboard.switches_id, 'casekebyard'])
     .then((result) => {
-        res.statusStatus(201);
+        res.sendStatus(201);
       }).catch((err) => {
         res.sendStatus(500);
         console.log('Error in POST', err);
       });
-  });
+  })
 
 
   module.exports = router;

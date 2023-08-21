@@ -88,6 +88,23 @@ CREATE TABLE "user_switches" (
   "switches_id" INT REFERENCES "switches" NOT NULL
 );
 
+-- JOIN TABLE --
+SELECT 
+"keyboard"."id",
+"keyboard"."name_of_keyboard",
+"cases"."image" AS "case_image",
+"cases"."name" AS "case_name",
+"keycaps"."image" AS "keycaps_image",
+"keycaps"."name" AS "keycaps_name",
+"stabilizers"."image" AS "stabilizers_image",
+"stabilizers"."name" AS "stabilizers_name",
+"switches"."image" AS "switches_image",
+"switches"."name" AS "switches_name" FROM "keyboard" 
+JOIN "cases" ON "keyboard"."cases_id" = "cases"."id"
+JOIN "keycaps" ON "keyboard"."keycaps_id" = "keycaps"."id"
+JOIN "stabilizers" ON "keyboard"."stabilizers_id" = "stabilizers"."id"
+JOIN "switches" ON "keyboard"."switches_id" = "switches"."id";
+
 -- DATA --
 
 INSERT INTO "cases" ("name", "size", "specifications", "price", "image")
@@ -103,7 +120,7 @@ VALUES
 ('KBDFans Odin', '100', 'Leaf spring mount, 7 degree typing angle, PVD aluminum weight, translucent badge', '295', 'odin100.jpeg'),
 ('CannonKeys Rekt1800', '100', '1800 layout burger mounted keyboard, 7.5 degree typing angle, black FR4 plate', '330', 'rekt1800.jpeg');
 
-INSERT INTO "keycaps" ("name", "type", "specifications", "price", "image")
+INSERT INTO "keycaps" ("name", "profile", "specifications", "price", "image")
 VALUES
 ('GMK DualShot', 'Cherry', 'A PlayStation 1 themed keycap set that will bring the nostolgia right to your desk. Double-shot ABS plastic.', '140', 'dualshot.jpeg'),
 ('GMK Striker', 'Cherry', 'A keycap set tributed to the Japanese National Football Team. Double-shot ABS plastic.', '140', 'gmkstriker.jpeg'),
