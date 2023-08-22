@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import LogOutButton from '../LogOutButton/LogOutButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import Components from '../Component/Components';
+import Products from '../Products/Products';
 
 function UserPage() {
   const dispatch = useDispatch();
@@ -43,13 +43,13 @@ function UserPage() {
   return (
     <div className="container">
     
-      {JSON.stringify(keyboards)}
+      {/* {JSON.stringify(keyboards)} */}
 
       <h2>Select a case</h2>
-      <Components name="cases" selected={selectedCasesId} setSelected={setSelectedCasesId} />
-      <Components name="keycaps" selected={selectedKeycapsId} setSelected={setSelectedKeycapsId} />
-      <Components name="stabilizers" selected={selectedStabilizersId} setSelected={setSelectedStabilizersId} />
-      <Components name="switches" selected={selectedSwitchesId} setSelected={setSelectedSwitchesId} />
+      <Products name="cases" selected={selectedCasesId} setSelected={setSelectedCasesId} />
+      <Products name="keycaps" selected={selectedKeycapsId} setSelected={setSelectedKeycapsId} />
+      <Products name="stabilizers" selected={selectedStabilizersId} setSelected={setSelectedStabilizersId} />
+      <Products name="switches" selected={selectedSwitchesId} setSelected={setSelectedSwitchesId} />
       {
         JSON.stringify({
           selectedCasesId,

@@ -42,5 +42,25 @@ router.get('/', (req, res) => {
       });
   })
 
+  router.put('/:id', (req, res) => {
+    pool.query(``)
+  })
+
+  router.delete('/:id', (req, res) => {
+    let keyboard = req.body;
+    let query = `
+    DELETE FROM "keyboard" WHERE id=$1;
+    `;
+    pool.query(query, [keyboard])
+    then((result) => {
+      console.log('Keyboard delete');
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.sendStatus(500);
+    })
+  })
+
 
   module.exports = router;

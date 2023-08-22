@@ -1,13 +1,46 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 
+function Cases({ name, selected, setSelected }) {
+    const history = useHistory();
 
-function Cases() {
+    let [casesList, setCasesList] = useState([]);
 
-
+    useEffect(() => {
+        fetch(`/api/cases/${name}`)
+        .then((response) => response.json())
+        .then(casesListFromServer => setCasesList(casesListFromServer))
+        .catch(error => console.log(error)); // TODO: Add alert
+    })
     return (
-        <h1>Cases</h1>
-    );
+        <>
+        {
+            casesList.map(cases => (
+                <div>
+                    {
+                        selected === cases.id && (
+                            <div>Selected!</div>
+                        )
+                    }
+                    <img 
+                    className="images" 
+                    style={{width: '200px', height: 'auto'}} 
+                    src={`images/${cases.image}`} 
+                    alt={cases.name}
+                    
+                    />
+                    
+                    <button onClick={() => setSelected(cases.id)}>
+                        Add
+                    </button>
+                    <p>Stuff</p>
+                </div>
+            ))
+        }
+        
+        </>
+    )
 }
 
 export default Cases; 

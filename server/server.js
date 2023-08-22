@@ -9,7 +9,7 @@ const passport = require('./strategies/user.strategy');
 // Route includes
 const userRouter = require('./routes/user.router');
 const keyboardRouter = require('./routes/keyboard.router');
-const componentsRouter = require('./routes/components.router');
+const productsRouter = require('./routes/products.router');
 
 
 // Express middleware
@@ -25,7 +25,7 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/keyboard', keyboardRouter);
-app.use('/api/components', componentsRouter);
+app.use('/api/products', productsRouter);
 
 // Serve static files
 app.use(express.static('build'));
