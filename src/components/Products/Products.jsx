@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 import './Products.css';
 
 function Products({ name, selected, setSelected }) {
+    const history = useHistory();
+
     let [productsList, setProductsList] = useState([]);
 
     useEffect(() => {

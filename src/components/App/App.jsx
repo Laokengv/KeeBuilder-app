@@ -24,6 +24,7 @@ import Keycaps from '../BuilderPages/Keycaps';
 import Stabilizers from '../BuilderPages/Stabilizers';
 import Cases from '../BuilderPages/Cases';
 import Switches from '../BuilderPages/Switches';
+import SavedBuilds from '../SavedBuilds/SavedBuilds';
 
 // import BuilderPage from '../BuilderPages/BuilderPage';
 
@@ -42,6 +43,7 @@ function App() {
     <Router>
       <div>
         <Nav />
+        <SavedBuilds />
         {/* <BuilderPage /> */}
         {/* <MenuNav /> */}
         <Switch>
