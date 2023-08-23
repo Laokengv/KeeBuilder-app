@@ -22,7 +22,7 @@ function Nav() {
           </Link>
         )}
 
-        <Link className="navLink" to="/savedBuilds">
+        <Link className="navLink" to="/savedBuilds" >
           Saved Builds
         </Link>
 
