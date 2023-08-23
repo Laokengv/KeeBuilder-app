@@ -18,8 +18,11 @@ function UserPage() {
     <div className="container">
       <h2>Select a case</h2>
       <Products name="cases" />
+      <h2>Select keycaps</h2>
       <Products name="keycaps" />
+      <h2>Select stabilizer</h2>
       <Products name="stabilizers" />
+      <h2>Select switches</h2>
       <Products name="switches" />
 
       <div className="selected-data">
@@ -31,7 +34,7 @@ function UserPage() {
             </li>
           ))}
         </ul>
-        <button onClick={handleSave}>Save</button>
+        <button className='btn btn-primary' onClick={handleSave}>Save</button>
       </div>
     </div>
   );

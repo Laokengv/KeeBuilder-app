@@ -45,11 +45,11 @@ function SavedBuilds() {
                                 /></figure>
                                 <div className="card-body items-center text-center">
                                     <h2 className="card-title">{products.name}</h2>
-                                    <p>Profile: {products.profile}</p>
+                                    {/* <p>Profile: {products.profile}</p>
                                     <p>Size: {products.size}</p>
                                     <p>Type: {products.type}</p>
                                     <p>Specs: {products.specifications}</p>
-                                    <p>Price: ${products.price}</p>
+                                    <p>Price: ${products.price}</p> */}
                                     <div className="card-actions justify-end">
                                         <button className='btn btn-primary' onClick={() => handleDelete(products.id)}>
                                             Delete

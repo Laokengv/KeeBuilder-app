@@ -8,7 +8,19 @@ import React from 'react';
 function InfoPage() {
   return (
     <div className="container">
-      <p>Info Page</p>
+      <h1>Technologies Utilized</h1>
+      <p>Node</p>
+      <p>Express</p>
+      <p>React, React-DOM</p>
+      <p>Postgresql</p>
+      <p>Heroku</p>
+      <p>Javascript</p>
+      <p>Redux, React-Redux</p>
+      <p>DaisyUI</p>
+      <p>Tailwind CSS</p>
+      <p>HTML</p>
+      <p>Passport</p>
+      <p>CSS</p>
     </div>
   );
 }
