@@ -16,13 +16,13 @@ function UserPage() {
 
   return (
     <div className="container">
-      <h2>Select a case</h2>
+      <h2 className="product-header">Select a case</h2>
       <Products name="cases" />
-      <h2>Select keycaps</h2>
+      <h2 className="product-header">Select keycaps</h2>
       <Products name="keycaps" />
-      <h2>Select stabilizer</h2>
+      <h2 className="product-header">Select stabilizer</h2>
       <Products name="stabilizers" />
-      <h2>Select switches</h2>
+      <h2 className="product-header">Select switches</h2>
       <Products name="switches" />
 
       <div className="selected-data">

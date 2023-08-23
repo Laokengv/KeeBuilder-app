@@ -27,7 +27,7 @@ function Products({ name }) {
         <>
             {
                 productsList.map((products, i) => (
-                    <div key={products.id} className="card w-96 bg-base-100 shadow-x1">
+                    <div key={products.id} className="card card-compact w-96 bg-base-100 shadow-x1">
                         {
                             selectedProducts.some(selectedProduct => selectedProduct.id === products.id) && (
                                 <div className="selected">Selected!</div>
@@ -37,8 +37,9 @@ function Products({ name }) {
                             className="images"
                             // style={{ width: '300px', height: 'auto' }}
                             src={`images/${products.image}`}
+                            alt={`${products.name}`}
                         /></figure>
-                        <div className='card-body items-center text-center'>
+                        <div className='card-body'>
                             <h2 className='card-title'>{products.name}</h2>
                             <p>Profile: {products.profile}</p>
                             <p>Size: {products.size}</p>
