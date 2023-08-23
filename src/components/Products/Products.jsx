@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
+// import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { SelectedProductsProvider, useSelectedProducts } from '../../redux/reducers/SelectedProductsContext';
 
 import './Products.css';
 
-function Products({ name, selected, setSelected }) {
+function Products({ name }) {
     const history = useHistory();
+ 
+    const { selectedProducts, dispatch } = useSelectedProducts();
 
     let [productsList, setProductsList] = useState([]);
 
@@ -13,24 +17,29 @@ function Products({ name, selected, setSelected }) {
             .then((response) => response.json())
             .then(productsListFromServer => setProductsList(productsListFromServer))
             .catch(error => console.log(error)); // TODO: Add alert
-    })
+    }, [name]);
+
+    const handleAddToSelected = (products) => {
+        dispatch({ type: 'ADD_SELECTED_PRODUCT', payload: products });
+    };
+
     return (
         <>
             {
                 productsList.map((products, i) => (
                     <>
-                        <div className="card w-96 glass">
+                        <div key={products.id} className="card w-96 bg-base-100 shadow-x1">
                             {
-                                selected === products.id && (
+                                selectedProducts.some(selectedProduct => selectedProduct.id === products.id) && (
                                     <div>Selected!</div>
                                 )
                             }
-                            <figure><img
+                            <figure className="px-10 pt-10"><img
                                 className="images"
                                 style={{ width: '300px', height: 'auto' }}
                                 src={`images/${products.image}`}
                             /></figure>
-                            <div className='card-body'>
+                            <div className='card-body items-center text-center'>
                                 <h2 className='card-title'>{products.name}</h2>
                                 <p>Profile: {products.profile}</p>
                                 <p>Size: {products.size}</p>
@@ -38,8 +47,8 @@ function Products({ name, selected, setSelected }) {
                                 <p>Specs: {products.specifications}</p>
                                 <p>Price: ${products.price}</p>
                                 <div className='card-actions justify-end'>
-                                    <button className='btn btn-primary' onClick={() => setSelected(products.id)}>
-                                        Add
+                                    <button className='btn btn-primary' onClick={() => handleAddToSelected(products)}>
+                                        Select
                                     </button>
                                 </div>
                             </div>

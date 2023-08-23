@@ -1,42 +1,9 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
 
 import rootReducer from './reducers/_root.reducer'; // imports ./redux/reducers/index.js
 import rootSaga from './sagas/_root.saga'; // imports ./redux/sagas/index.js
-
-const cases = (state = [], action) => {
-  if (action.type === 'SET_CASES') {
-      return action.payload;
-  }
-
-  return state;
-}
-
-const keycaps = (state = [], action) => {
-  if (action.type === 'SET_KEYCAPS') {
-      return action.payload;
-  }
-
-  return state;
-}
-
-const stabilizers = (state = [], action) => {
-  if (action.type === 'SET_STABILIZERS') {
-      return action.payload;
-  }
-
-  return state;
-}
-
-const switches = (state = [], action) => {
-  if (action.type === 'SET_SWITCHES') {
-      return action.payload;
-  }
-
-  return state;
-}
-
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -48,15 +15,9 @@ const middlewareList = process.env.NODE_ENV === 'development' ?
   [sagaMiddleware];
 
 const store = createStore(
-  combineReducers({
   // tells the saga middleware to use the rootReducer
   // rootSaga contains all of our other reducers
-  cases,
-  keycaps,
-  stabilizers,
-  switches,
   rootReducer,
-  }),
   // adds all middleware to our project including saga and logger
   applyMiddleware(...middlewareList),
 );

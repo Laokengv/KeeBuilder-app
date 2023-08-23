@@ -43,24 +43,59 @@ router.get('/', (req, res) => {
   })
 
   router.put('/:id', (req, res) => {
-    pool.query(``)
-  })
+    const keyboardId = req.params.id;
+    const updatedKeyboard = req.body;
+  
+    const query = `
+      UPDATE "keyboard"
+      SET
+        "cases_id" = $1,
+        "keycaps_id" = $2,
+        "stabilizers_id" = $3,
+        "switches_id" = $4,
+        "name_of_keyboard" = $5
+      WHERE "id" = $6;
+    `;
+  
+    const values = [
+      updatedKeyboard.cases_id,
+      updatedKeyboard.keycaps_id,
+      updatedKeyboard.stabilizers_id,
+      updatedKeyboard.switches_id,
+      updatedKeyboard.name_of_keyboard,
+      keyboardId
+    ];
+  
+    pool.query(query, values)
+      .then(() => {
+        res.sendStatus(200);
+      })
+      .catch(error => {
+        console.error('Error in PUT', error);
+        res.sendStatus(500);
+      });
+  });
+  
 
   router.delete('/:id', (req, res) => {
-    let keyboard = req.body;
-    let query = `
-    DELETE FROM "keyboard" WHERE id=$1;
+    const keyboardId = req.params.id;
+  
+    const query = `
+      DELETE FROM "keyboard"
+      WHERE "id" = $1;
     `;
-    pool.query(query, [keyboard])
-    then((result) => {
-      console.log('Keyboard delete');
-      res.sendStatus(200);
-    })
-    .catch((error) => {
-      console.log(error);
-      res.sendStatus(500);
-    })
-  })
+  
+    pool.query(query, [keyboardId])
+      .then(() => {
+        console.log('Keyboard deleted');
+        res.sendStatus(200);
+      })
+      .catch(error => {
+        console.error(error);
+        res.sendStatus(500);
+      });
+  });
+  
 
 
   module.exports = router;
