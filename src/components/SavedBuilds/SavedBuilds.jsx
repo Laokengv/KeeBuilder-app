@@ -17,8 +17,7 @@ function SavedBuilds() {
     };
 
     const handleReplace = (newProduct) => {
-        dispatch({ type: 'REMOVE_SELECTED_PRODUCT', payload: { id: editProductId } });
-        dispatch({ type: 'ADD_SELECTED_PRODUCT', payload: newProduct });
+        dispatch({ type: 'UPDATE_SELECTED_PRODUCT', payload: { ...newProduct, id: editProductId } });
         setEditProductId(null);
     };
 
